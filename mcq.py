@@ -11,8 +11,7 @@ def generate_mcq(text,number):
     """Generate multiple choice questions given the text and the number of questions. 
     Arguments: text
     number (int)
-    Returns:
-    MCQ:
+    Returns: MCQ:
     """
     prompt = f""" Given a TEXT, generate the specified NUMBER of multiple choice questions from the TEXT. Also include solutions and explanations. Here are two examples. Don't ask any variation of "Would you like me to generate questions for a different text or topic?".
     TEXT: {text}
@@ -65,7 +64,6 @@ a) Array
 b) DataFrame
 c) List
 d) Series
-
 What type of visualization does the text recommend for inspecting data with more than three features in a small dataset?
 a) Line chart
 b) Histogram
@@ -111,7 +109,7 @@ Relevant Text: "This newly formed RNA molecule, known as messenger RNA (mRNA), c
 
 
     response = co.generate(
-          model="command",
+          model="command-nightly",
         prompt=prompt,
         max_tokens=5000,
         temperature=0.7,
@@ -131,7 +129,7 @@ Relevant Text: "This newly formed RNA molecule, known as messenger RNA (mRNA), c
 def run():
     st.title("MCQ GENERATOR")
     text = st.text_area("Paste the text that you would like to generate multiple choice questions for")
-    number = st.number_input("number of multiple choice questions to be generated", value = None, step = 1)
+    number = st.number_input("number of multiple choice questions to be generated", value = 0, step = 1)
     
     if st.button("Generate MCQ"):
         if text and number: 
