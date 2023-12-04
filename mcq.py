@@ -39,7 +39,7 @@ def generate_mcq(text,number):
 
 
 def run():
-    st.title("MCQ GENERATOR ✨")
+    st.title("✨MCQ GENERATOR ✨")
     text = st.text_area("Paste the text that you would like to generate multiple choice questions for:")
     number = st.number_input("Input the number of multiple choice questions to be generated:", min_value =0, value = 0, step = 1)
     
