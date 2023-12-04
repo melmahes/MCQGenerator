@@ -13,7 +13,7 @@ def generate_mcq(text,number):
     number (int)
     Returns: MCQ:
     """
-    prompt = f""" Given a TEXT, generate the specified NUMBER of multiple choice questions based on the TEXT. ".
+    prompt = f""" Given a TEXT, generate the specified NUMBER of multiple choice questions based on the TEXT. Provide 4 options for each multiple choice question. Ensure there is only one correct answer. Provide the answers to the questions at the end. ".
     TEXT: {text}
     NUMBER: {number}
     """
