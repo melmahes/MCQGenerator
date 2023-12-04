@@ -1,7 +1,7 @@
 import streamlit as st
 import cohere
 import os
-import pandas as pd
+
 
 api_key = os.environ.get('CO_API_KEY')
 co = cohere.Client(api_key)
